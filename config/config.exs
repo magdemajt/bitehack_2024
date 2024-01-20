@@ -10,6 +10,8 @@ import Config
 config :scam,
   ecto_repos: [Scam.Repo]
 
+
+
 # Configures the endpoint
 config :scam, ScamWeb.Endpoint,
   url: [host: "localhost"],
