@@ -3,6 +3,7 @@ defmodule ScamWeb.ConversationLive.Index do
 
   alias Scam.AddictionCheck
   alias Scam.AddictionCheck.Conversation
+  alias Scam.AddictionCheck.ConversationPart
 
   @impl true
   def mount(_params, _session, socket) do
@@ -47,24 +48,34 @@ defmodule ScamWeb.ConversationLive.Index do
 
   @impl true
   def handle_event("client_message", %{"client_id" => client_id, "message" => message}, socket) do
-    conversation = AddictionCheck.get_conversation!(client_id)
-#    zip conversation.questions, conversation.answers and then map to OpenAI messages
-
-    zipped_conv =Enum.zip(conversation.questions, conversation.answers)
-                 |> Enum.flat_map(fn {q, a} -> [%{role: "assistant", content: a}] ++ [%{role: "user", content: q}]  end)
-
+    client_conversation_part = %ConversationPart{author: :user, content: message, client_id: client_id}
+    {:ok, _} = AddictionCheck.create_conversation_part(client_conversation_part)
+    conversations = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
     messages =  [
       %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
-    ] ++ zipped_conv
+    ] ++ Enum.map(conversations, fn conversation -> case conversation.author do
+      :user -> %{role: "user", content: conversation.question}
+      :bot -> %{role: "assistant", content: conversation.answer}
+      :expert -> %{role: "assistant", content: conversation.answer}
+    end end)
 
     chatbot_response = OpenAI.chat_completion(
       model: "gpt-3.5-turbo",
-      messages: [
-        %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
-      ] ++ zipped_conv
+      messages: messages,
     )
 
-    {:noreply, stream_update(socket, :conversations, conversation)}
+    chatbot_response_text = case chatbot_response do
+      {:ok, response} -> response.choices.at(0).message.content
+      _ -> "Nie rozumiem, proszę spróbuj wytłumaczyć inaczej"
+    end
+
+    chatbot_conversation_part = %ConversationPart{author: :bot, content: chatbot_response_text, client_id: client_id}
+
+    {:ok, _} = AddictionCheck.create_conversation_part(chatbot_conversation_part)
+
+    conversation_parts_with_chatbot = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
+
+    {:noreply, stream_update(socket, :conversations, conversation_parts_with_chatbot)}
   end
 
   @impl true
@@ -76,12 +87,12 @@ defmodule ScamWeb.ConversationLive.Index do
   end
 
 #  Should create new user
-  @impl true
-  def handle_event("create_conv", %{
-    "name" => name,
-    "surname" => surname,
-
-  }, socket) do
-
-  end
+#  @impl true
+#  def handle_event("create_conv", %{
+#    "name" => name,
+#    "surname" => surname,
+#
+#  }, socket) do
+#
+#  end
 end

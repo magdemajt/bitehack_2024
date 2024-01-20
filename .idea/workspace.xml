@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Updated config">
-      <change afterPath="$PROJECT_DIR$/lib/scam_web/controllers/addiction_check_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/hackney.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/hackney.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scam.iml" afterDir="false" />
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Added addiction check controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/scam/addiction_check_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/scam/addiction_check_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/support/fixtures/addiction_check_fixtures.ex" beforeDir="false" afterPath="$PROJECT_DIR$/test/support/fixtures/addiction_check_fixtures.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
-      <workItem from="1705756184277" duration="4008000" />
+      <workItem from="1705756184277" duration="8478000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -118,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705758589085</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added addiction check controller">
+      <option name="closed" value="true" />
+      <created>1705761903330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705761903330</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +134,7 @@
     <MESSAGE value="Added users" />
     <MESSAGE value="Added docker-compose" />
     <MESSAGE value="Updated config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated config" />
+    <MESSAGE value="Added addiction check controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added addiction check controller" />
   </component>
 </project>

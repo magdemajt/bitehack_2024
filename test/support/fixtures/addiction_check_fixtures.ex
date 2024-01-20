@@ -18,4 +18,19 @@ defmodule Scam.AddictionCheckFixtures do
 
     conversation
   end
+
+  @doc """
+  Generate a conversation_part.
+  """
+  def conversation_part_fixture(attrs \\ %{}) do
+    {:ok, conversation_part} =
+      attrs
+      |> Enum.into(%{
+        author: :user,
+        content: "some content"
+      })
+      |> Scam.AddictionCheck.create_conversation_part()
+
+    conversation_part
+  end
 end
