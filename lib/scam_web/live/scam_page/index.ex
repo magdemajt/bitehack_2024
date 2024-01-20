@@ -1,4 +1,4 @@
-defmodule ScamWeb.MainPage.Index do
+defmodule ScamWeb.MainLive.Index do
   use ScamWeb, :live_view
 
   alias Scam.Accounts

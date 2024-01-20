@@ -23,8 +23,7 @@ defmodule ScamWeb.Router do
 
     live "/users/:id", UserLive.Show, :show
     live "/users/:id/show/edit", UserLive.Show, :edit
-    live "/", MainPage.Index, :index
-    get "/", PageController, :home
+    live "/", MainLive.Index, :index
   end
 
   # Other scopes may use custom stacks.

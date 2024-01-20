@@ -1,32 +1,266 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <div class="flex items-center gap-4">
-      <a href="/">
-        <img src={~p"/images/logo.svg"} width="36" />
-      </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
-      </p>
-    </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
+<div>
+    <section class="sticky">
+
+      <div
+        class="max-w-lg px-4 sm:pt-8 pt-4 sm:pb-4 mx-auto text-left md:max-w-none md:text-center"
       >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
+<div class='text-center hidden sm:block'>
+  <a href='https://bitehack.best.krakow.pl'>
+    <button class="font-semibold backdrop-blur-sm transition duration-500 ease-in-out bg-[#FF4F01] border border-[#E2E8F0] translate-y-1 text-white hover:bg-neutral-200  py-2.5 px-4 rounded-full inline-flex items-center">
+      <img src="https://bitehack.best.krakow.pl/static/BH_logo-1e5b3186017595911c608568af3dd213.png" width="16" height="16" alt="BiteHack Logo" />
+      &nbsp; &nbsp;<span style="color: white;"> BiteHack 2024 </span>
+    </button>
+  </a>
     </div>
-  </div>
-</header>
-<main class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
-    <.flash_group flash={@flash} />
-    <%= @inner_content %>
-  </div>
-</main>
+        <h1
+          class="mt-10 font-extrabold leading-10 tracking-tight text-left text-[#201515] text-center sm:leading-none text-5xl sm:text-9xl"
+        >
+          <span class="inline md:block">Zdrowy </span>
+          <span
+            class="relative mt-2 bg-clip-text text-[#201515] md:inline-block"
+          >Kredyt.</span>
+        </h1>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="text-left py-24">
+        <div class='sm:px-28'>
+          <section class="relative flex items-center w-full">
+    
+            <div class="relative items-center w-full px-5 mx-auto md:px-12 lg:px-16 max-w-7xl">
+              <div class="relative flex-col items-start m-auto align-middle">
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
+                  <div class="relative items-center gap-12 m-auto lg:inline-flex md:order-first">
+                    <div class="max-w-xl text-center lg:text-left">
+                      <div>
+    
+                        <p class="text-3xl font-semibold tracking-tight text-[#201515] sm:text-5xl">
+                          Finanse Osobiste i Pożyczki
+    
+                        </p>
+                        <p class="max-w-xl mt-4 text-base tracking-tight text-gray-600">
+                          Zarządzanie finansami osobistymi jest kluczowe dla jednostek. Przy rozważaniu pożyczek ważne jest zrozumienie związanych z nimi zależności. Czy to kredyt hipoteczny, studencki czy osobisty, jednostki powinny starannie ocenić oprocentowanie, warunki spłaty i ogólny wpływ na ich stabilność finansową. Podejmowanie świadomych decyzji dotyczących pożyczek pomaga jednostkom osiągać cele finansowe bez narażania swojej stabilności finansowej.
+                        </p>
+                      </div>
+                      <div class="flex justify-center gap-3 mt-10 lg:justify-start">
+                        <a class="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-none focus-visible:outline-gray-600" href="#">
+                          <span> Czytaj więcej  &nbsp; → </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-first block w-full mt-12 aspect-square lg:mt-0">
+                    <img class="object-cover rounded-3xl object-center w-full mx-auto bg-gray-300 lg:ml-auto " alt="hero" src="https://i.pinimg.com/originals/2e/2b/21/2e2b21aeed393403d4620367f9e093f9.gif" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    
+        </div>
+    
+      </div>
+    </section>
+    <section>
+      <div class="bg-white-100 py-24 flex items-center justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+          <!-- Pricing Card 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <div class="p-1 bg-[#E2E8F0]">
+            </div>
+            <div class="p-8">
+              <h2 class="text-3xl font-bold text-gray-800 mb-4">Kredyt miesięczny</h2>
+              <p class="text-gray-600 mb-6">Idealny na drobne zachcianki</p>
+              <p class="text-4xl font-bold text-gray-800 mb-6">do $5.000</p>
+              <ul class="text-sm text-gray-600 mb-6">
+                <li class="mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Spacaj w 12 ratach
+                </li>
+                <li class="mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Indywidualna stopa oprocentowanie
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  24/7 Dostęp do specjalistów
+                </li>
+              </ul>
+            </div>
+            <div class="p-4">
+              <button
+                class="w-full bg-[#E2E8F0] text-white rounded-full px-4 py-2 focus:outline-none focus:shadow-outline-blue">
+                Select Plan
+              </button>
+            </div>
+          </div>
+      
+          <!-- Pricing Card 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <div class="p-1 bg-[#FF4F01]">
+            </div>
+            <div class="p-8">
+              <h2 class="text-3xl font-bold text-gray-800 mb-4">Kredyt miesięczny</h2>
+              <p class="text-gray-600 mb-6">Idealny na drobne zachcianki</p>
+              <p class="text-4xl font-bold text-gray-800 mb-6">do $5.000</p>
+              <ul class="text-sm text-gray-600 mb-6">
+                <li class="mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Spacaj w 24 ratach
+                </li>
+                <li class="mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Indywidualna stopa oprocentowanie
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  24/7 Dostęp do specjalistów
+                </li>
+              </ul>
+            </div>
+            <div class="p-4">
+              <button
+                class="w-full bg-[#FF4F01] text-white rounded-full px-4 py-2 focus:outline-none focus:shadow-outline-blue">
+                Select Plan
+              </button>
+            </div>
+          </div>
+          <!-- Pricing Card 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <div class="p-1 bg-black">
+            </div>
+            <div class="p-8">
+              <h2 class="text-3xl font-bold text-gray-800 mb-4">Kredyt miesięczny</h2>
+              <p class="text-gray-600 mb-6">Idealny na drobne zachcianki</p>
+              <p class="text-4xl font-bold text-gray-800 mb-6">do $5.000</p>
+              <ul class="text-sm text-gray-600 mb-6">
+                <li class="mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Spłać nawet w 333 ratach
+                </li>
+                <li class="mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Indywidualna stopa oprocentowanie
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  24/7 Dostęp do specjalistów
+                </li>
+              </ul>
+            </div>
+            <div class="p-4">
+              <button
+                class="w-full bg-black text-white rounded-full px-4 py-2 focus:outline-none focus:shadow-outline-blue">
+                Select Plan
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-md mx-auto p-4">
+      <!-- Chat Container -->
+      <div class="bg-white rounded-lg shadow-md p-4">
+        <!-- Chat Header -->
+        <div class="flex items-center mb-4">
+          <div class="ml-3">
+            <p class="text-xl font-medium">Your AI Assistant</p>
+            <p class="text-gray-500">Online</p>
+          </div>
+        </div>
+    
+        <!-- Chat Messages -->
+        <div class="space-y-4">
+          <!-- Received Message -->
+          <div class="flex items-start">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="100"
+                height="100"
+                fill="#009688"
+                class="w-8 h-8 rounded-full"
+                >
+    
+                <!-- Robot Face -->
+                <circle cx="50" cy="50" r="20" fill="#009688" />
+                <circle cx="50" cy="40" r="2" fill="#fff" />
+                <rect x="47" y="45" width="6" height="10" fill="#fff" />
+                <circle cx="50" cy="65" r="3" fill="#009688" />
+    
+                <!-- Robot Eyes -->
+                <circle cx="45" cy="45" r="3" fill="#fff" />
+                <circle cx="55" cy="45" r="3" fill="#fff" />
+                <circle cx="45" cy="45" r="1" fill="#000" />
+                <circle cx="55" cy="45" r="1" fill="#000" />
+    
+                <!-- Robot Antennas -->
+                <line x1="50" y1="30" x2="40" y2="20" stroke="#009688" stroke-width="2" />
+                <line x1="50" y1="30" x2="60" y2="20" stroke="#009688" stroke-width="2" />
+                </svg>
+            <div class="ml-3 bg-gray-100 p-3 rounded-lg">
+              <p class="text-sm text-gray-800">Hello! How can I help you today?</p>
+            </div>
+          </div>
+    
+          <!-- Sent Message -->
+          <div class="flex items-end justify-end">
+            <div class="bg-blue-500 p-3 rounded-lg">
+              <p class="text-sm text-white">Sure, I have a question.</p>
+            </div>
+            <img src="https://pbs.twimg.com/profile_images/1707101905111990272/Z66vixO-_normal.jpg" alt="Other User Avatar" class="w-8 h-8 rounded-full ml-3" />
+          </div>
+        </div>
+    
+        <!-- Chat Input -->
+        <div class="mt-4 flex items-center">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            class="flex-1 py-2 px-3 rounded-full bg-gray-100 focus:outline-none"
+          />
+          <button class="bg-blue-500 text-white px-4 py-2 rounded-full ml-3 hover:bg-blue-600">Send</button>
+        </div>
+      </div>
+    </div>
+</div>
