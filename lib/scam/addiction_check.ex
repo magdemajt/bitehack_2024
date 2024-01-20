@@ -21,14 +21,13 @@ defmodule Scam.AddictionCheck do
     Repo.all(ConversationPart)
   end
 
-  def list_conversation_parts(%{ "client_id" => client_id }) do
+  def list_conversation_parts(%{ client_id: client_id }) do
 #    sort by created_at
-    Repo.all(ConversationPart, where: [client_id: client_id], order_by: [asc: :inserted_at])
+    Repo.all(from c in ConversationPart, where: c.client_id == ^client_id, order_by: [asc: c.inserted_at])
   end
 
-  def list_conversation_parts(_rest) do
-    #    sort by created_at
-    Repo.all(ConversationPart, order_by: [asc: :inserted_at])
+  def list_conversation_parts(rest) do
+    []
   end
 
   @doc """

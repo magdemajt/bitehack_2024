@@ -5,48 +5,61 @@ defmodule ScamWeb.ConversationLive.Index do
   alias Scam.AddictionCheck.ConversationPart
 
   @impl true
-  def mount(_params, _session, socket) do
-    {:ok, stream(socket, :messages, [])}
+  def mount(params, session, socket) do
+    {:ok, socket |> stream(:messages, [])}
   end
 
   @impl true
   def handle_params(params, _url, socket) do
-    {:ok, user} = case params do
-      %{"id" => id} -> Accounts.get_user!(id)
-      _ -> Accounts.create_user(%{
-        name: "not_provided",
-        surname: "not_provided",
-        date_of_birth: Date.utc_today(),
-        city: "not_provided",
-        postal_code: "not_provided",
-        address_line_one: "not_provided",
-        country: "not_provided",
-        phone_number: "not_provided",
-      })
-    end
-    new_socket = assign(socket, :id, user.id)
-    {:noreply, apply_action(new_socket, socket.assigns.live_action, params)}
+    {:noreply, apply_action(socket, socket.assigns.live_action, params)}
   end
 
+
   defp apply_action(socket, :index, _params) do
-    socket
-    |> assign(:page_title, "Listing Conversations")
-    |> assign(:messages, case socket.assigns.id do
+    list = case socket.assigns[:id] do
       nil -> []
       _ -> AddictionCheck.list_conversation_parts(%{ client_id: socket.assigns.id })
+    end
+
+    socket = Enum.reduce(list, socket, fn conversation, acc ->
+      stream_insert(acc, :messages, conversation)
     end)
+    socket
+    |> assign(:page_title, "Listing Conversations")
   end
 
   def handle_event("get_user_id", %{}, socket) do
 #    push event with user id
-    {:noreply, push_event(socket, "user_id", %{user_id: socket.assigns.id})}
+    {:noreply, push_event(socket, "received_user_id", %{user_id: socket.assigns.id})}
   end
 
+  @impl true
+  def handle_event("create_user", %{}, socket) do
+    {:ok, user} = Accounts.create_user(%{
+      name: "not_provided",
+      surname: "not_provided",
+      date_of_birth: Date.utc_today(),
+      city: "not_provided",
+      postal_code: "not_provided",
+      address_line_one: "not_provided",
+      country: "not_provided",
+      phone_number: "not_provided",
+    })
+    {:noreply, push_event(assign(socket, :id, user.id), "user_id", %{user_id: user.id})}
+  end
+
+  def handle_event("set_user_id", %{"user_id" => user_id}, socket) do
+    user = Accounts.get_user!(user_id)
+    messages = AddictionCheck.list_conversation_parts(%{ client_id: user.id })
+    socket = Enum.reduce(messages, socket, fn conversation, acc ->
+      stream_insert(acc, :messages, conversation)
+    end)
+    {:noreply, assign(socket, :id, user.id)}
+  end
 
 
   defp handle_client_message(message, socket) do
     client_id = socket.assigns.id
-    IO.inspect client_id
     {:ok, client_conversation} = AddictionCheck.create_conversation_part(%{author: :user, content: message, client_id: client_id})
     socket = stream_insert(socket, :messages, client_conversation)
     conversations = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
@@ -72,7 +85,7 @@ defmodule ScamWeb.ConversationLive.Index do
 
     {:ok, chatbot_conversation_part} = AddictionCheck.create_conversation_part(chatbot_conversation_part)
 
-    {:reply, %{} ,stream_insert(socket, :messages, chatbot_conversation_part)}
+    {:noreply, stream_insert(socket, :messages, chatbot_conversation_part)}
   end
 
   @impl true
@@ -81,7 +94,7 @@ defmodule ScamWeb.ConversationLive.Index do
   end
 
   @impl true
-  def handle_event("client_message", %{"key" => key, "value" => value}, socket) do
+  def handle_event("client_message", %{"key" => _key, "value" => value}, socket) do
 #    assign value to socket message
     {:noreply, assign(socket, :message, value)}
   end
