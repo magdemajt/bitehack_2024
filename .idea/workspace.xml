@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Working messaging">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Removed conversation.ex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check/conversation.ex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/form_component.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/components/layouts/app.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/components/layouts/app.html.heex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/show.ex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/show.html.heex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20240120142245_create_conversations.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20240120150016_create_conversation_parts.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/scam_page/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/scam_page/index.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/router.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +74,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -94,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
-      <workItem from="1705756184277" duration="9619000" />
+      <workItem from="1705756184277" duration="11630000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -136,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705767843083</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed conversation.ex">
+      <option name="closed" value="true" />
+      <created>1705768971483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705768971483</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +154,7 @@
     <MESSAGE value="Updated config" />
     <MESSAGE value="Added addiction check controller" />
     <MESSAGE value="Working messaging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working messaging" />
+    <MESSAGE value="Removed conversation.ex" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed conversation.ex" />
   </component>
 </project>

@@ -6,7 +6,7 @@ defmodule ScamWeb.ConversationLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, stream(socket, :conversations, [])}
+    {:ok, stream(socket, :messages, [])}
   end
 
   @impl true
@@ -17,13 +17,13 @@ defmodule ScamWeb.ConversationLive.Index do
   defp apply_action(socket, :index, _params) do
     socket
     |> assign(:page_title, "Listing Conversations")
-    |> assign(:conversation, nil)
+    |> assign(:messages, [])
   end
 
 
 
   @impl true
-  def handle_event("client_message", %{"client_id" => client_id, "message" => message}, socket) do
+  def handle_event("client_message", %{"client_id" => client_id, "value" => message}, socket) do
     client_conversation_part = %ConversationPart{author: :user, content: message, client_id: client_id}
     {:ok, _} = AddictionCheck.create_conversation_part(client_conversation_part)
     conversations = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
@@ -51,7 +51,7 @@ defmodule ScamWeb.ConversationLive.Index do
 
     conversation_parts_with_chatbot = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
 
-    {:noreply, stream_insert(socket, :conversations, conversation_parts_with_chatbot)}
+    {:noreply, stream_insert(socket, :messages, conversation_parts_with_chatbot)}
   end
 
 #  Should create new user
