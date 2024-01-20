@@ -1,7 +1,7 @@
 <section>
-    <div class="mx-auto p-4">
+    <div class="mx-auto p-4 h-100 max-h-full hover:max-h-screen h-full">
         <!-- Chat Container -->
-        <div class="bg-white rounded-lg shadow-md p-4">
+        <div class=" rounded-lg p-4 flex-col max-h-full h-full">
             <!-- Chat Header -->
             <div class="flex items-center mb-4">
                 <div class="ml-3">
@@ -10,7 +10,7 @@
             </div>
 
             <!-- Chat Messages -->
-            <div class="space-y-4">
+            <div class="space-y-4 grow">
                 <!-- Received Message -->
                 <div class="space-y-4">
                     <%= for message <- @messages do %>
@@ -32,7 +32,7 @@
                     <% end %>
                 </div>
                 <!-- Chat Input -->
-                <div class="mt-4 flex items-center">
+                <div class="mt-4 flex items-center ">
                     <input
                             type="text"
                             placeholder="Wprowadź wiadomość..."

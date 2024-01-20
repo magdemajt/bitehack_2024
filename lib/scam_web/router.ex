@@ -26,6 +26,7 @@ defmodule ScamWeb.Router do
     live "/users/:id", UserLive.Show, :show
     live "/users/:id/show/edit", UserLive.Show, :edit
     live "/conversations", ConversationLive.Index, :index
+    live "/opinions", OpinionsLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
