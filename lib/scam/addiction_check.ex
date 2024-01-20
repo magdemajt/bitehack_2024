@@ -26,6 +26,11 @@ defmodule Scam.AddictionCheck do
     Repo.all(ConversationPart, where: [client_id: client_id], order_by: [asc: :inserted_at])
   end
 
+  def list_conversation_parts(_rest) do
+    #    sort by created_at
+    Repo.all(ConversationPart, order_by: [asc: :inserted_at])
+  end
+
   @doc """
   Gets a single conversation_part.
 

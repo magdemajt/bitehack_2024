@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Removed conversation.ex">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Added sending user_id in app.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/components/layouts/app.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/components/layouts/app.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/scam_page/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/scam_page/index.html.heex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/router.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,21 +62,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "chatbot",
-    "last_opened_file_path": "/home/wejman/AGH/BiteHack/scam/lib/scam_web/live/scam_page",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;chatbot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/wejman/AGH/BiteHack/scam/lib/scam_web/live/scam_page&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/scam_web/live/scam_page" />
@@ -92,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
-      <workItem from="1705756184277" duration="11630000" />
+      <workItem from="1705756184277" duration="17013000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -142,7 +141,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705768971483</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added chatbot view">
+      <option name="closed" value="true" />
+      <created>1705772936344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705772936344</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added sending user_id in app.js">
+      <option name="closed" value="true" />
+      <created>1705779600535</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1705779600535</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +170,8 @@
     <MESSAGE value="Added addiction check controller" />
     <MESSAGE value="Working messaging" />
     <MESSAGE value="Removed conversation.ex" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed conversation.ex" />
+    <MESSAGE value="Added chatbot view" />
+    <MESSAGE value="Added sending user_id in app.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sending user_id in app.js" />
   </component>
 </project>
