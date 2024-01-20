@@ -1,6 +1,6 @@
 defmodule ScamWeb.ConversationLive.Index do
   use ScamWeb, :live_view
-
+  alias Scam.Accounts
   alias Scam.AddictionCheck
   alias Scam.AddictionCheck.ConversationPart
 
@@ -11,7 +11,21 @@ defmodule ScamWeb.ConversationLive.Index do
 
   @impl true
   def handle_params(params, _url, socket) do
-    {:noreply, apply_action(socket, socket.assigns.live_action, params)}
+    {:ok, user} = case params.id do
+      nil -> Accounts.create_user(%{
+        name: "not_provided",
+        surname: "not_provided",
+        date_of_birth: "not_provided",
+        city: "not_provided",
+        postal_code: "not_provided",
+        address_line_one: "not_provided",
+        country: "not_provided",
+        phone_number: "not_provided",
+      })
+      id -> Accounts.get_user!(id)
+    end
+    new_socket = assign(socket, :id, user.id)
+    {:noreply, apply_action(new_socket, socket.assigns.live_action, params)}
   end
 
   defp apply_action(socket, :index, _params) do
