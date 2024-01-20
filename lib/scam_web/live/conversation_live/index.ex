@@ -30,7 +30,7 @@ defmodule ScamWeb.ConversationLive.Index do
 
   def handle_event("get_user_id", %{}, socket) do
 #    push event with user id
-    {:noreply, push_event(socket, "received_user_id", %{user_id: socket.assigns[:id]})}
+    {:noreply, push_event(socket, "received_user_id", %{user_id: socket.assigns.id})}
   end
 
   @impl true
