@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Added addiction check controller">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Working messaging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check/conversation.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/form_component.ex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/scam/addiction_check_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/scam/addiction_check_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/support/fixtures/addiction_check_fixtures.ex" beforeDir="false" afterPath="$PROJECT_DIR$/test/support/fixtures/addiction_check_fixtures.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/show.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/show.html.heex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20240120142245_create_conversations.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20240120150016_create_conversation_parts.exs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
-      <workItem from="1705756184277" duration="8478000" />
+      <workItem from="1705756184277" duration="9619000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -124,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705761903330</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Working messaging">
+      <option name="closed" value="true" />
+      <created>1705767843083</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705767843083</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +147,7 @@
     <MESSAGE value="Added docker-compose" />
     <MESSAGE value="Updated config" />
     <MESSAGE value="Added addiction check controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added addiction check controller" />
+    <MESSAGE value="Working messaging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working messaging" />
   </component>
 </project>
