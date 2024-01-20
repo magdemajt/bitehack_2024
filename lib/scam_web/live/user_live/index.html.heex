@@ -1,0 +1,48 @@
+<.header>
+  Listing Users
+  <:actions>
+    <.link patch={~p"/users/new"}>
+      <.button>New User</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="users"
+  rows={@streams.users}
+  row_click={fn {_id, user} -> JS.navigate(~p"/users/#{user}") end}
+>
+  <:col :let={{_id, user}} label="Name"><%= user.name %></:col>
+  <:col :let={{_id, user}} label="Surname"><%= user.surname %></:col>
+  <:col :let={{_id, user}} label="Date of birth"><%= user.date_of_birth %></:col>
+  <:col :let={{_id, user}} label="City"><%= user.city %></:col>
+  <:col :let={{_id, user}} label="Postal code"><%= user.postal_code %></:col>
+  <:col :let={{_id, user}} label="Address line one"><%= user.address_line_one %></:col>
+  <:col :let={{_id, user}} label="Country"><%= user.country %></:col>
+  <:col :let={{_id, user}} label="Phone number"><%= user.phone_number %></:col>
+  <:action :let={{_id, user}}>
+    <div class="sr-only">
+      <.link navigate={~p"/users/#{user}"}>Show</.link>
+    </div>
+    <.link patch={~p"/users/#{user}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, user}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: user.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="user-modal" show on_cancel={JS.patch(~p"/users")}>
+  <.live_component
+    module={ScamWeb.UserLive.FormComponent}
+    id={@user.id || :new}
+    title={@page_title}
+    action={@live_action}
+    user={@user}
+    patch={~p"/users"}
+  />
+</.modal>
