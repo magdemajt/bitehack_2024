@@ -72,7 +72,7 @@ defmodule ScamWeb.ConversationLive.Index do
 
     {:ok, chatbot_conversation_part} = AddictionCheck.create_conversation_part(chatbot_conversation_part)
 
-    {:noreply, push_event(stream_insert(socket, :messages, chatbot_conversation_part), "clear_message_input", %{})}
+    {:reply, %{} ,stream_insert(socket, :messages, chatbot_conversation_part)}
   end
 
   @impl true

@@ -32,8 +32,7 @@ let Hooks = {};
 Hooks.GetUserId = {
     mounted() {
         // push event get_user_id
-        this.handleEvent("get_user_id", ({user_id}) => {
-            console.log(user_id, 'user_id');
+        this.handleEvent("user_id", ({user_id}) => {
             window.localStorage.setItem("user_id", user_id);
         });
         this.pushEvent("get_user_id", {});

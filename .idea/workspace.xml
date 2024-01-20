@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Added sending user_id in app.js">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Partial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
-      <workItem from="1705756184277" duration="17013000" />
+      <workItem from="1705756184277" duration="18622000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -157,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705779600535</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Partial">
+      <option name="closed" value="true" />
+      <created>1705782397190</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1705782397190</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +178,7 @@
     <MESSAGE value="Removed conversation.ex" />
     <MESSAGE value="Added chatbot view" />
     <MESSAGE value="Added sending user_id in app.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sending user_id in app.js" />
+    <MESSAGE value="Partial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial" />
   </component>
 </project>
