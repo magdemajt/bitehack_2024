@@ -34,10 +34,16 @@ defmodule ScamWeb.ConversationLive.Index do
     |> assign(:messages, [])
   end
 
+  def handle_event("get_user_id", %{}, socket) do
+#    push event with user id
+    {:noreply, push_event(socket, "user_id", %{user_id: socket.assigns.id})}
+  end
+
 
 
   @impl true
-  def handle_event("client_message", %{"client_id" => client_id, "value" => message}, socket) do
+  def handle_event("client_message", %{"value" => message}, socket) do
+    client_id = socket.assigns.id
     client_conversation_part = %ConversationPart{author: :user, content: message, client_id: client_id}
     {:ok, _} = AddictionCheck.create_conversation_part(client_conversation_part)
     conversations = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
