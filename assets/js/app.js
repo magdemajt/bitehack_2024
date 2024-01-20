@@ -24,7 +24,26 @@ import topbar from "../vendor/topbar"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let user_id = window.localStorage.getItem("user_id");
-let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken, ...(user_id ? {id: user_id} : {})}})
+
+console.log(user_id, 'user_id');
+
+let Hooks = {};
+
+Hooks.GetUserId = {
+    mounted() {
+        // push event get_user_id
+        this.handleEvent("get_user_id", ({user_id}) => {
+            console.log(user_id, 'user_id');
+            window.localStorage.setItem("user_id", user_id);
+        });
+        this.pushEvent("get_user_id", {});
+    }
+}
+
+let liveSocket = new LiveSocket("/live", Socket, {
+    params: {_csrf_token: csrfToken, ...(user_id ? {id: user_id} : {})},
+    hooks: Hooks
+})
 
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
@@ -35,11 +54,6 @@ window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
 // connect if there are any LiveViews on the page
 liveSocket.connect()
 
-liveSocket.on('user_id', (user_id) => {
-    window.localStorage.setItem("user_id", user_id);
-});
-
-liveSocket.pushEvent("get_user_id", {});
 
 // expose liveSocket on window for web console debug logs and latency simulation:
 // >> liveSocket.enableDebug()

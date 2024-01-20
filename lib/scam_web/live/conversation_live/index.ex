@@ -11,18 +11,18 @@ defmodule ScamWeb.ConversationLive.Index do
 
   @impl true
   def handle_params(params, _url, socket) do
-    {:ok, user} = case params.id do
-      nil -> Accounts.create_user(%{
+    {:ok, user} = case params do
+      %{"id" => id} -> Accounts.get_user!(id)
+      _ -> Accounts.create_user(%{
         name: "not_provided",
         surname: "not_provided",
-        date_of_birth: "not_provided",
+        date_of_birth: Date.utc_today(),
         city: "not_provided",
         postal_code: "not_provided",
         address_line_one: "not_provided",
         country: "not_provided",
         phone_number: "not_provided",
       })
-      id -> Accounts.get_user!(id)
     end
     new_socket = assign(socket, :id, user.id)
     {:noreply, apply_action(new_socket, socket.assigns.live_action, params)}
@@ -31,7 +31,10 @@ defmodule ScamWeb.ConversationLive.Index do
   defp apply_action(socket, :index, _params) do
     socket
     |> assign(:page_title, "Listing Conversations")
-    |> assign(:messages, [])
+    |> assign(:messages, case socket.assigns.id do
+      nil -> []
+      _ -> AddictionCheck.list_conversation_parts(%{ client_id: socket.assigns.id })
+    end)
   end
 
   def handle_event("get_user_id", %{}, socket) do
@@ -41,19 +44,19 @@ defmodule ScamWeb.ConversationLive.Index do
 
 
 
-  @impl true
-  def handle_event("client_message", %{"value" => message}, socket) do
+  defp handle_client_message(message, socket) do
     client_id = socket.assigns.id
-    client_conversation_part = %ConversationPart{author: :user, content: message, client_id: client_id}
-    {:ok, _} = AddictionCheck.create_conversation_part(client_conversation_part)
+    IO.inspect client_id
+    {:ok, client_conversation} = AddictionCheck.create_conversation_part(%{author: :user, content: message, client_id: client_id})
+    socket = stream_insert(socket, :messages, client_conversation)
     conversations = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
     messages =  [
-      %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
-    ] ++ Enum.map(conversations, fn conversation -> case conversation.author do
-      :user -> %{role: "user", content: conversation.question}
-      :bot -> %{role: "assistant", content: conversation.answer}
-      :expert -> %{role: "assistant", content: conversation.answer}
-    end end)
+                  %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
+                ] ++ Enum.map(conversations, fn conversation -> case conversation.author do
+                                                                  :user -> %{role: "user", content: conversation.content}
+                                                                  :bot -> %{role: "assistant", content: conversation.content}
+                                                                  :expert -> %{role: "assistant", content: conversation.content}
+                                                                end end)
 
     chatbot_response = OpenAI.chat_completion(
       model: "gpt-3.5-turbo",
@@ -65,13 +68,31 @@ defmodule ScamWeb.ConversationLive.Index do
       _ -> "Nie rozumiem, proszę spróbuj wytłumaczyć inaczej"
     end
 
-    chatbot_conversation_part = %ConversationPart{author: :bot, content: chatbot_response_text, client_id: client_id}
+    chatbot_conversation_part = %{author: :bot, content: chatbot_response_text, client_id: client_id}
 
-    {:ok, _} = AddictionCheck.create_conversation_part(chatbot_conversation_part)
+    {:ok, chatbot_conversation_part} = AddictionCheck.create_conversation_part(chatbot_conversation_part)
 
-    conversation_parts_with_chatbot = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
+    {:noreply, push_event(stream_insert(socket, :messages, chatbot_conversation_part), "clear_message_input", %{})}
+  end
 
-    {:noreply, stream_insert(socket, :messages, conversation_parts_with_chatbot)}
+  @impl true
+  def handle_event("client_message", %{"key" => "Enter", "value" => message}, socket) do
+    handle_client_message(message, assign(socket, :message, nil))
+  end
+
+  @impl true
+  def handle_event("client_message", %{"key" => key, "value" => value}, socket) do
+#    assign value to socket message
+    {:noreply, assign(socket, :message, value)}
+  end
+
+  @impl true
+  def handle_event("confirm_client_message", _, socket) do
+    message = socket.assigns.message
+    case message do
+      nil -> {:noreply, socket}
+      _ -> handle_client_message(message, assign(socket, :message, nil))
+    end
   end
 
 #  Should create new user
