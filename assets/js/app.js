@@ -29,11 +29,21 @@ let user_id = window.localStorage.getItem("user_id");
 let Hooks = {};
 
 
+function scrollToEnd() {
+    setTimeout(() => {
+        const messageContainer = document.getElementById('message-container');
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    },500);
+}
+
 Hooks.FormReset = {
     mounted() {
         this.el.addEventListener("keypress", e => {
             if (e.key === 'Enter') {
-                document.getElementById('chat-input').value = '';
+                setTimeout(() => {
+                    document.getElementById('chat-input').value = '';
+                    scrollToEnd()
+                }, 500);    
               }
         })
     },
@@ -42,7 +52,10 @@ Hooks.FormReset = {
 Hooks.FormResetByClick = {
     mounted() {
         this.el.addEventListener("click", e => {
-            document.getElementById('chat-input').value = '';
+            setTimeout(() => {
+                document.getElementById('chat-input').value = '';
+                scrollToEnd()
+            }, 500);    
         })
     },
 }
