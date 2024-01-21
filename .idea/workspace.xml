@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Fix id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
@@ -15,6 +16,10 @@
       <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check/conversation_part.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check/conversation_part.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
 >>>>>>> b384443 (Fix id)
+=======
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Fix id">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 2310bbb (Fixed id)
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,10 +103,14 @@
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1705756184277" duration="25558000" />
 =======
       <workItem from="1705756184277" duration="24040000" />
 >>>>>>> b384443 (Fix id)
+=======
+      <workItem from="1705756184277" duration="25558000" />
+>>>>>>> 2310bbb (Fixed id)
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -184,6 +193,9 @@
       <updated>1705784981328</updated>
     </task>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2310bbb (Fixed id)
     <task id="LOCAL-00011" summary="Fix id">
       <option name="closed" value="true" />
       <created>1705791460397</created>
@@ -193,9 +205,12 @@
       <updated>1705791460397</updated>
     </task>
     <option name="localTasksCounter" value="12" />
+<<<<<<< HEAD
 =======
     <option name="localTasksCounter" value="11" />
 >>>>>>> b384443 (Fix id)
+=======
+>>>>>>> 2310bbb (Fixed id)
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,10 +228,15 @@
     <MESSAGE value="Partial" />
     <MESSAGE value="Fixed not passing user_id" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <MESSAGE value="Fix id" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix id" />
 =======
     <option name="LAST_COMMIT_MESSAGE" value="Fixed not passing user_id" />
 >>>>>>> b384443 (Fix id)
+=======
+    <MESSAGE value="Fix id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix id" />
+>>>>>>> 2310bbb (Fixed id)
   </component>
 </project>
