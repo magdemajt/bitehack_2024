@@ -13,7 +13,7 @@ defmodule Scam.AddictionCheck.ConversationPart do
   @doc false
   def changeset(conversation_part, attrs) do
     conversation_part
-    |> cast(attrs, [:author, :content])
-    |> validate_required([:author, :content])
+    |> cast(attrs, [:author, :content, :client_id])
+    |> validate_required([:author, :content, :client_id])
   end
 end
