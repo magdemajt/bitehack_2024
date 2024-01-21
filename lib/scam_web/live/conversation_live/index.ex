@@ -45,7 +45,13 @@ defmodule ScamWeb.ConversationLive.Index do
       country: "not_provided",
       phone_number: "not_provided",
     })
-    {:noreply, push_event(assign(socket, :id, user.id), "user_id", %{user_id: user.id})}
+#   create first question about addiction
+    {:ok, client_conversation} = AddictionCheck.create_conversation_part(%{
+      author: :bot,
+      content: "Pierwsze pytanie",
+      client_id: user.id
+    })
+    {:noreply, push_event(assign(socket, :id, user.id), "user_id", %{user_id: user.id}) |> stream_insert(:messages, client_conversation)}
   end
 
   def handle_event("set_user_id", %{"user_id" => user_id}, socket) do
@@ -72,8 +78,8 @@ defmodule ScamWeb.ConversationLive.Index do
     chatbot_response = OpenAI.chat_completion(
       model: "gpt-3.5-turbo",
       messages: [
-                  %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
-                ] ++ Enum.take(messages, -10),
+                  %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie. Nie odpowiadaj na nic niezwiązanego z uzależnieniami! Zadaj po kolei następujące pytania: "},
+                ] ++ Enum.take(messages, -100),
     )
 
     chatbot_response_text = case chatbot_response do
