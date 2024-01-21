@@ -10,7 +10,8 @@ import Config
 config :scam,
   ecto_repos: [Scam.Repo]
 
-
+config :openai,
+  api_key: System.get_env("OPENAI_API_KEY")
 
 # Configures the endpoint
 config :scam, ScamWeb.Endpoint,

@@ -63,9 +63,7 @@ defmodule ScamWeb.ConversationLive.Index do
     {:ok, client_conversation} = AddictionCheck.create_conversation_part(%{author: :user, content: message, client_id: client_id})
     socket = stream_insert(socket, :messages, client_conversation)
     conversations = AddictionCheck.list_conversation_parts(%{ client_id: client_id })
-    messages =  [
-                  %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
-                ] ++ Enum.map(conversations, fn conversation -> case conversation.author do
+    messages =   Enum.map(conversations, fn conversation -> case conversation.author do
                                                                   :user -> %{role: "user", content: conversation.content}
                                                                   :bot -> %{role: "assistant", content: conversation.content}
                                                                   :expert -> %{role: "assistant", content: conversation.content}
@@ -73,11 +71,13 @@ defmodule ScamWeb.ConversationLive.Index do
 
     chatbot_response = OpenAI.chat_completion(
       model: "gpt-3.5-turbo",
-      messages: messages,
+      messages: [
+                  %{role: "system", content: "Jesteś asystentem, który ma pomóc użytkownikowi w walce z uzależnieniem i wykryć u niego uzależnienie."},
+                ] ++ Enum.take(messages, -10),
     )
 
     chatbot_response_text = case chatbot_response do
-      {:ok, response} -> response.choices.at(0).message.content
+      {:ok, response} -> Enum.at(response.choices, 0)["message"]["content"]
       _ -> "Nie rozumiem, proszę spróbuj wytłumaczyć inaczej"
     end
 

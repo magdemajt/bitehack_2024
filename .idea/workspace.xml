@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Fixed not passing user_id">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Fixed id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam/addiction_check/conversation_part.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam/addiction_check/conversation_part.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.html.heex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705784981328</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed id">
+      <option name="closed" value="true" />
+      <created>1705796366014</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1705796366014</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +196,7 @@
     <MESSAGE value="Added sending user_id in app.js" />
     <MESSAGE value="Partial" />
     <MESSAGE value="Fixed not passing user_id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed not passing user_id" />
+    <MESSAGE value="Fixed id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed id" />
   </component>
 </project>
