@@ -25,7 +25,6 @@ import topbar from "../vendor/topbar"
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let user_id = window.localStorage.getItem("user_id");
 
-
 let Hooks = {};
 
 
