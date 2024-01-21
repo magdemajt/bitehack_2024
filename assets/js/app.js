@@ -25,9 +25,40 @@ import topbar from "../vendor/topbar"
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let user_id = window.localStorage.getItem("user_id");
 
-console.log(user_id, 'user_id');
 
 let Hooks = {};
+
+
+function scrollToEnd() {
+    setTimeout(() => {
+        const messageContainer = document.getElementById('message-container');
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    },500);
+}
+
+Hooks.FormReset = {
+    mounted() {
+        this.el.addEventListener("keypress", e => {
+            if (e.key === 'Enter') {
+                setTimeout(() => {
+                    document.getElementById('chat-input').value = '';
+                    scrollToEnd()
+                }, 500);    
+              }
+        })
+    },
+}
+
+Hooks.FormResetByClick = {
+    mounted() {
+        this.el.addEventListener("click", e => {
+            setTimeout(() => {
+                document.getElementById('chat-input').value = '';
+                scrollToEnd()
+            }, 500);    
+        })
+    },
+}
 
 Hooks.GetUserId = {
     mounted() {
@@ -42,6 +73,7 @@ Hooks.GetUserId = {
         }
     }
 }
+
 
 let liveSocket = new LiveSocket("/live", Socket, {
     params: {_csrf_token: csrfToken, ...(user_id ? {id: user_id} : {})},
