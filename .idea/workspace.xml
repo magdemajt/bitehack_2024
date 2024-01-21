@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="questions placeholders">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Debugged">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/opinions_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/opinions_live/index.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scam_web/live/scam_page/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/scam_page/index.html.heex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
       <workItem from="1705756184277" duration="24040000" />
-      <workItem from="1705823800150" duration="2490000" />
+      <workItem from="1705823800150" duration="3902000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -196,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705825234920</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Debugged">
+      <option name="closed" value="true" />
+      <created>1705826473905</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705826473905</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +225,7 @@
     <MESSAGE value="Fixed id" />
     <MESSAGE value="Jest szef, model działa" />
     <MESSAGE value="questions placeholders" />
-    <option name="LAST_COMMIT_MESSAGE" value="questions placeholders" />
+    <MESSAGE value="Debugged" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugged" />
   </component>
 </project>

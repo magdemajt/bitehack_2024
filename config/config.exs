@@ -11,7 +11,8 @@ config :scam,
   ecto_repos: [Scam.Repo]
 
 config :openai,
-  api_key: System.get_env("OPENAI_API_KEY")
+  api_key: System.get_env("OPENAI_API_KEY"),
+  http_options: [recv_timeout: :infinity, send_timeout: :infinity]
 
 # Configures the endpoint
 config :scam, ScamWeb.Endpoint,
