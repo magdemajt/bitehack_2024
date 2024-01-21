@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Fixed id">
+    <list default="true" id="066842c0-e450-4646-b089-50f76521b99a" name="Changes" comment="Jest szef, model działa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scam_web/live/conversation_live/index.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +89,7 @@
       <updated>1705755297702</updated>
       <workItem from="1705755298795" duration="873000" />
       <workItem from="1705756184277" duration="24040000" />
+      <workItem from="1705823800150" duration="1144000" />
     </task>
     <task id="LOCAL-00001" summary="Added users">
       <option name="closed" value="true" />
@@ -179,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705796366014</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Jest szef, model działa">
+      <option name="closed" value="true" />
+      <created>1705799264355</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705799264355</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +205,7 @@
     <MESSAGE value="Partial" />
     <MESSAGE value="Fixed not passing user_id" />
     <MESSAGE value="Fixed id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed id" />
+    <MESSAGE value="Jest szef, model działa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jest szef, model działa" />
   </component>
 </project>
