@@ -51,7 +51,7 @@ defmodule ScamWeb.ConversationLive.Index do
       content: "Pierwsze pytanie",
       client_id: user.id
     })
-    {:noreply, push_event(assign(socket, :id, user.id), "user_id", %{user_id: user.id}) |> stream_insert(:messages, client_conversation)}
+    {:noreply, push_event(assign(socket, :id, user.id), "received_user_id", %{user_id: user.id}) |> stream_insert(:messages, client_conversation)}
   end
 
   def handle_event("set_user_id", %{"user_id" => user_id}, socket) do
